@@ -1,0 +1,74 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./bower_components/polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="./bower_components/polymer/lib/elements/dom-if.html">
+<link rel="import" href="./bower_components/app-route/app-location.html">
+<!-- everything in one -->
+<link rel="import" href="./solr.html">
+
+<dom-module id="solr-search">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      .search {
+        width: 30%;
+        float:left; /* TODO: change */
+      }
+      .results {
+        width: 70%;
+        float:left; /* TODO: change */
+      }
+
+      solr-results {
+        --results-height: var(--results-height, 500px);
+      }
+    </style>
+
+    <app-location
+      use-hash-as-path
+      route="{{route}}"
+    ></app-location>
+
+    <slot id="config"></slot>
+  
+    <section class="search">
+      <solr-searchfield
+        route="{{route}}"
+      ></solr-searchfield>
+
+      <template is="dom-repeat" items="[[facets]]">
+        <template is="dom-if" if="[[isListFacet(item.name)]]">
+          <solr-facet-list-internal
+            route="{{route}}"
+            results="[[results]]"
+            label="[[item.label]]"
+            key="[[item.key]]"
+          ></solr-facet-list-internal>
+        </template>
+        <template is="dom-if" if="[[isNumberRangeFacet(item.name)]]">
+          <solr-facet-number-range-internal
+            route="{{route}}"
+            results="[[results]]"
+            label="[[item.label]]"
+            key="[[item.key]]"
+            min="[[item.min]]"
+            max="[[item.max]]"
+            step="[[item.step]]"
+          ></solr-facet-number-range-internal>
+        </template>
+      </template>
+    </section> 
+ 
+    <section class="results"> 
+      <solr-results
+        results="[[results]]"
+      >
+        <slot name="results"></slot>
+      </solr-results>
+    </section>  
+    
+  </template>
+
+  <script src="solr-search.js"></script>
+</dom-module>

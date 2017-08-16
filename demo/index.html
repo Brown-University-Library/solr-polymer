@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <title>solr-search demo</title>
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../solr-search.html">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <solr-search jsonp url="https://repository.library.brown.edu/api/search/">
+      <!-- configuration -->
+      <solr-facet-number-range label="Size (kB)" key="fed_object_size_lsi" min="0" max="500000" step="10000"></solr-facet-number-range>
+      <solr-facet-list label="Object Type" key="object_type"></solr-facet-list>
+      <solr-facet-list label="Keyword" key="keyword"></solr-facet-list>
+      <!-- results template  -->
+      <template slot="results">
+        <section>
+          <span>Title: <a href="https://repository.library.brown.edu/studio/item/[[item.pid]]">[[item.primary_title]]</a></span>
+        </section>
+      </template>
+    </solr-search>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "solr-search",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "fetch-jsonp": "^1.1.1"
+  }
+}

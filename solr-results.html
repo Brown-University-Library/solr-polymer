@@ -1,0 +1,44 @@
+<link rel="import" href="./bower_components/iron-list/iron-list.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
+
+<dom-module id="solr-results">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      iron-list {
+        height: var(--results-height, 400px);
+      }
+      .results_header {
+        padding-top: 8px; font-family:'Roboto', 'Noto', sans-serif; font-size: 1.75em
+      }
+      .results_footer {
+        width: 100px; margin: auto;
+      }
+    </style>
+    
+    <div class="results_header">
+      Results ([[results.response.numFound]])
+    </div>
+
+    <iron-list items="[[__results]]">
+      <slot></slot>
+    </iron-list>
+
+    <div class="results_footer">
+      <paper-tabs id="plain-tabs" selected="0" style="padding-top:15px; height:auto;" no-bar>
+        <paper-tab link>
+          <a href="[[prev]]" tabindex="-1">Previous</a>
+        </paper-tab>
+        <paper-tab link>
+          <a href="[[next]]" tabindex="-1">Next</a>
+        </paper-tab>
+      </paper-tabs>
+    </div>
+
+  </template>
+
+  <script src="./solr-results.js"></script>
+</dom-module>

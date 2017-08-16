@@ -1,0 +1,32 @@
+<link rel="import" href="./bower_components/polymer/polymer-element.html">
+<link rel="import" href="./bower_components/paper-range-slider/paper-range-slider.html">
+
+<dom-module id="solr-facet-number-range-internal">
+  <template>
+    <style>
+      :host {
+        /*flex: 0 1 24%;*/
+        font-family:'Roboto','Noto',sans-serif;
+      }
+      .label {
+        font-size: 1.3rem;
+        margin: 10px 0;
+      }
+
+      paper-range-slider[always-show-pin] {
+        margin-top: 25px;
+      }
+    </style>
+
+    <section>
+      <h2 class="label">[[label]]</h2>
+      <paper-range-slider id="slider" always-show-pin pin
+        step="[[step]]" min="[[min]]" max="[[max]]"
+        valueMin="[[min]]" valueMax="[[max]]"
+      ></paper-range-slider>
+    </section>
+
+  </template>
+
+  <script src="./solr-facet-number-range-internal.js"></script>
+</dom-module>
