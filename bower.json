@@ -20,7 +20,7 @@
     "paper-input": "PolymerElements/paper-input#^2.0.1",
     "paper-button": "PolymerElements/paper-button#^2.0.0",
     "iron-form": "PolymerElements/iron-form#^2.0.0",
-    "iron-list": "PolymerElements/iron-list#^2.0.8",
+    "iron-list": "git://github.com/colehansen/iron-list#master",
     "paper-tabs": "PolymerElements/paper-tabs#^2.0.0",
     "paper-range-slider": "git://github.com/zpv/paper-range-slider#^1.0.0"
   },
