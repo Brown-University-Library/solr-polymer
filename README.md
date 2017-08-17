@@ -1,4 +1,4 @@
-# <solr-search>
+# &lt;solr-search&gt;
 
 ## Installing
 
