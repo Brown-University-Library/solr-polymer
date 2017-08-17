@@ -42,5 +42,5 @@ bower install; yarn install (or npm i)
 ### Running
 
 ```bash
-polymer server -H 0.0.0.0 -p 8000 (host and port flags optional)
+polymer serve -H 0.0.0.0 -p 8000 (host and port flags optional)
 ```
