@@ -44,3 +44,5 @@ bower install; yarn install (or npm i)
 ```bash
 polymer serve -H 0.0.0.0 -p 8000 (host and port flags optional)
 ```
+
+To see the demo, go to [http://localhost:8000/components/solr-search/demo](http://localhost:8000/components/solr-search/demo).
